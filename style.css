@@ -1,0 +1,606 @@
+/* ========================================================= */
+/* ARQUIVO DE ESTILO PRINCIPAL - MEVDIGITAL                  */
+/* Tema: Dark Mode, Roxo/Lilás, Foco em Agilidade Digital    */
+/* ========================================================= */
+
+/* 🎨 VARIÁVEIS DE CORES E FONTES (Dark Mode) */
+:root {
+    /* Fundos */
+    --cor-fundo-principal: #0E0E10; /* Cinza quase preto */
+    --cor-fundo-card: #18181B;    /* Cinza um pouco mais claro */
+    --cor-fundo-destaque: #0F1D41; /* Azul Profundo (para seções especiais) */
+    
+    /* Textos */
+    --cor-texto-principal: #F5F5F7; /* Branco suave (High Contrast) */
+    --cor-texto-secundario: #A0A0A0; /* Cinza médio */
+    --cor-texto-detalhe: #EBDDD7;  /* Branco quente */
+    
+    /* Destaques (Roxo/Lilás) */
+    --cor-primaria: #805AD5;      /* Roxo Primário (CTAs, Botões) */
+    --cor-hover: #9F7AEA;         /* Roxo Claro (Hover, Feedback) */
+    --cor-complementar: #7116AA;  /* Lilás Complementar (Acentos) */
+
+    /* Sombras e Bordas */
+    --sombra-card: 0 4px 10px rgba(0, 0, 0, 0.4);
+    
+    /* Fontes */
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-titulo: 'Space Grotesk', sans-serif;
+    --fonte-cta: 'Poppins', sans-serif;
+}
+
+/* 🧹 RESET BÁSICO E ESTILOS GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-texto-principal);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-texto-detalhe);
+    font-weight: 700;
+}
+
+/* 🧱 CLASSE GLOBAL PARA CENTRALIZAR CONTEÚDO */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px; /* Padding padrão para responsividade */
+}
+
+/* Estilo para links em texto corrido */
+p a, li a {
+    color: var(--cor-primaria);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+p a:hover, li a:hover {
+    color: var(--cor-hover);
+}
+
+/* ========================================================= */
+/* 2. COMPONENTES PRINCIPAIS: BOTÕES E CABEÇALHO             */
+/* ========================================================= */
+
+/* ⚪ ESTILO DOS BOTÕES */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-family: var(--fonte-cta);
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-principal);
+    border: 2px solid var(--cor-primaria);
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-hover);
+    border-color: var(--cor-hover);
+    box-shadow: 0 5px 15px rgba(128, 90, 213, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
+}
+
+.btn-outline:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-principal);
+}
+
+.btn-gigante {
+    font-size: 1.2rem;
+    padding: 15px 35px;
+}
+
+/* 🎯 CABEÇALHO (Header) */
+#main-header {
+    background-color: var(--cor-fundo-principal);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--cor-fundo-card);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    transition: color 0.3s;
+}
+
+.logo:hover {
+    color: var(--cor-hover);
+}
+
+/* Menu de Navegação */
+#menu {
+    display: flex;
+    gap: 25px;
+}
+
+#menu a {
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+    position: relative;
+}
+
+#menu a:hover, #menu a.active {
+    color: var(--cor-primaria);
+}
+
+#menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--cor-primaria);
+}
+
+/* Ícone de menu (hambúrguer) - Escondido por padrão */
+.menu-icon {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ========================================================= */
+/* 3. SEÇÕES DE CONTEÚDO (MAIN)                              */
+/* ========================================================= */
+
+main section {
+    padding: 60px 0;
+}
+
+main section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* 🦸 HERO SECTION (Destaque Principal) */
+#hero {
+    padding: 100px 0;
+    text-align: center;
+    background: var(--cor-fundo-principal); /* Garante que o fundo esteja correto */
+}
+
+#hero h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+#hero p {
+    font-size: 1.3rem;
+    color: var(--cor-texto-secundario);
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+#hero .cta-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ⭐️ DESTAQUE DE NÚMEROS (Índex e Sobre) */
+#numeros-destaque {
+    background-color: var(--cor-fundo-destaque);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.numeros-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.numero-item h3 {
+    font-size: 3rem;
+    color: var(--cor-primaria);
+    margin-bottom: 5px;
+}
+
+.numero-item p {
+    font-size: 1.1rem;
+    color: var(--cor-texto-detalhe);
+}
+
+/* 💳 CARDS DE SERVIÇO (Página de Serviços e Index) */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.servico-card {
+    background-color: var(--cor-fundo-card);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s, background-color 0.3s;
+    border-left: 5px solid var(--cor-complementar);
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    background-color: #25252a; /* Um pouco mais claro no hover */
+}
+
+.servico-card i {
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+.servico-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.servico-card p {
+    color: var(--cor-texto-secundario);
+}
+
+/* 📰 CARDS DO BLOG */
+#blog-content h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card-post {
+    display: block;
+    background-color: var(--cor-fundo-card);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s;
+}
+
+.card-post:hover {
+    transform: translateY(-5px);
+}
+
+.card-post .tag {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-principal);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.card-post h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.card-post p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.card-post .meta {
+    font-size: 0.8rem;
+    color: #5A5A5A; /* Cinza mais escuro */
+}
+
+/* 📞 SEÇÃO DE CONTATO */
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--cor-complementar);
+    background-color: var(--cor-fundo-card);
+    color: var(--cor-texto-principal);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+}
+
+.contato-info {
+    background-color: var(--cor-fundo-card);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.contato-info h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--cor-complementar);
+}
+
+.info-item p {
+    margin: 0;
+}
+
+/* 🌐 FOOTER (Rodapé) */
+#main-footer {
+    background-color: #0A0A0C;
+    padding-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col h4 {
+    font-size: 1.2rem;
+    color: var(--cor-texto-detalhe);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--cor-primaria);
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: var(--cor-texto-secundario);
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+.footer-col .logo {
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: var(--cor-fundo-card);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: var(--cor-primaria);
+    transition: all 0.5s;
+}
+
+.social-links a:hover {
+    color: var(--cor-texto-principal);
+    background-color: var(--cor-primaria);
+}
+
+.footer-bottom {
+    background-color: #000000;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer-bottom p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ========================================================= */
+/* 4. RESPONSIVIDADE (DEIXAR TUDO FÁCIL NO CELULAR)          */
+/* ========================================================= */
+
+@media screen and (max-width: 768px) {
+    /* 📱 Títulos e Textos Maiores */
+    #hero h1 {
+        font-size: 3rem;
+    }
+    
+    #hero p {
+        font-size: 1.1rem;
+    }
+
+    main section h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    /* 🍔 Menu Hamburguer */
+    .menu-icon {
+        display: block;
+    }
+    
+    #main-header nav {
+        /* Garante que o menu ocupe toda a lateral direita */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Posição inicial: fora da tela */
+        width: 70%; /* Ocupa 70% da largura da tela */
+        height: 100%;
+        background-color: var(--cor-fundo-principal); /* Cor do fundo do menu */
+        z-index: 1000; /* Fica acima de tudo */
+        padding-top: 80px; /* Espaço para não cobrir o logo */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        transition: right 0.4s ease-in-out;
+    }
+
+    #main-header nav #menu.active {
+        right: 0; /* Menu desliza para a posição visível */
+    }
+
+    #main-header nav #menu {
+        display: flex; /* Muda de row para column */
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        gap: 0; /* Remove o gap */
+    }
+
+    #main-header nav #menu li {
+        border-bottom: 1px solid var(--cor-fundo-card);
+    }
+    
+    #main-header nav #menu a {
+        display: block;
+        padding: 15px 0;
+        text-align: left;
+    }
+    
+    /* Esconde o botão 'Fale Conosco' no header no mobile para usar o do menu hambúrguer */
+    #main-header .btn-outline {
+        display: none;
+    }
+
+    /* 🔢 Ajuste dos Números */
+    .numeros-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .numero-item h3 {
+        font-size: 2.5rem;
+    }
+
+    /* 📞 Ajuste do Contato (Duas Colunas -> Uma Coluna) */
+    .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contato-info {
+        order: -1; /* Coloca as informações antes do formulário no mobile */
+    }
+    
+    /* 🦶 Ajuste do Footer */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-col {
+        min-width: 100%;
+    }
+    
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-col ul {
+        padding-left: 0;
+    }
+
+    .social-links {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .social-links a {
+        margin: 0 5px;
+    }
+}

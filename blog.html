@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Central de Tutoriais</title>
+    <meta name="description" content="Aprenda a resolver a burocracia veicular por conta própria. Guias completos sobre Licenciamento, Multas, Transferência e muito mais.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para o FAQ (Acordeão) */
+        .faq-secao {
+            margin-bottom: 60px;
+        }
+        .faq-pergunta {
+            background-color: var(--cor-fundo-card);
+            color: var(--cor-texto-principal);
+            padding: 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        .faq-pergunta:hover {
+            background-color: #0E0E10; /* Levemente mais escuro no hover */
+        }
+        .faq-pergunta i {
+            color: var(--cor-primaria);
+            font-size: 1.2em;
+        }
+        .faq-resposta {
+            max-height: 0;
+            overflow: hidden;
+            background-color: var(--cor-fundo-destaque);
+            color: var(--cor-texto-secundario);
+            padding: 0 20px;
+            border-radius: 0 0 8px 8px;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        .faq-resposta.active {
+            max-height: 500px; /* Suficiente para expandir o conteúdo */
+            padding: 20px;
+            transition: max-height 0.4s ease-in, padding 0.4s ease-in;
+        }
+        .faq-resposta p {
+            margin-bottom: 15px;
+        }
+        .faq-resposta ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-bottom: 10px;
+        }
+        .faq-resposta a {
+            color: var(--cor-primaria);
+            font-weight: 600;
+        }
+    </style>
+    </head>
+<body>
+
+    <header id="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Mev Consultoria</a>
+            
+            <nav>
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <a href="https://wa.me/message/ESJRV63FECTAD1?text=Olá! Preciso de ajuda com meu veículo." target="_blank" class="btn btn-outline">
+                <i class="fab fa-whatsapp"></i> Fale Conosco
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero-blog" class="container" style="text-align: center; padding-top: 80px; padding-bottom: 40px;">
+            <h1 style="font-size: 3em; color: var(--cor-primaria);">Central de Ajuda</h1>
+            <p style="font-size: 1.2em; max-width: 700px; margin: 0 auto;">Aqui, a burocracia se torna simples. Tutoriais, guias e notícias para você entender e resolver qualquer pendência do seu veículo.</p>
+        </section>
+
+        <section id="blog-content" class="container">
+            <h2>Últimos Guias</h2>
+            <div class="cards-container">
+                
+                <a href="https://www.notion.so/agenciaatthos/01-Licenciamento-Anual-2983f7363c1c801ebb87e5171f07660f?source=copy_link" class="card-post">
+                    <span class="tag">Licenciamento Anual</span>
+                    <h3>Passo a Passo: Como Licenciar Seu Veículo Online</h3>
+                    <p>Veja o calendário, as taxas e o checklist completo para emitir o CRLV-e sem sair de casa.</p>
+                    <div class="meta">Postado em 10/11/2025</div>
+                </a>
+                
+                <a href="https://www.notion.so/agenciaatthos/03-Como-Recorrer-de-Multa-de-Tr-nsito-SP-2983f7363c1c80e3afcaf67338340b15?source=copy_link" class="card-post">
+                    <span class="tag">Recursos</span>
+                    <h3>Como Montar o Recurso Perfeito para Multa de Trânsito</h3>
+                    <p>Da defesa prévia ao CETRAN: entenda seus direitos e aprenda a elaborar uma defesa que realmente funciona.</p>
+                    <div class="meta">Postado em 05/11/2025</div>
+                </a>
+                
+                <a href="https://www.notion.so/agenciaatthos/02-Como-fazer-a-Transfer-ncia-de-Ve-culo-Digital-2983f7363c1c803e9198c4127d038bfb?source=copy_link" class="card-post">
+                    <span class="tag">Documentação</span>
+                    <h3>Transferência Digital: O que Mudou com o ATPV-e?</h3>
+                    <p>Compra e venda de carros: saiba como preencher o novo DUT digital (ATPV-e) e quais documentos levar ao cartório.</p>
+                    <div class="meta">Postado em 25/10/2025</div>
+                </a>
+                
+                <a href="https://www.notion.so/agenciaatthos/05-Primeiro-Emplacamento-de-Ve-culos-Zero-Km-2983f7363c1c80b2acc3e31c4d1bcfd5?source=copy_link" class="card-post">
+                    <span class="tag">Veículo 0KM</span>
+                    <h3>Primeiro Emplacamento Descomplicado para Carros Novos</h3>
+                    <p>Tudo o que você precisa saber sobre nota fiscal, decalque de chassi e o prazo para rodar com o seu 0km.</p>
+                    <div class="meta">Postado em 20/10/2025 | 6 min de leitura</div>
+                </a>
+                
+                <a href="remocao-veiculo-patio-guia.html" class="card-post">
+                    <span class="tag">Emergência</span>
+                    <h3>Seu Carro foi para o Pátio? Veja Como Liberar Rápido</h3>
+                    <p>Descubra os débitos que precisam ser pagos, a documentação de liberação e o caminho mais rápido para sair do pátio.</p>
+                    <div class="meta">Postado em 15/10/2025 | 10 min de leitura</div>
+                </a>
+                  <a href="remocao-veiculo-patio-guia.html" class="card-post">
+                    <span class="tag">Emergência</span>
+                    <h3>Seu Carro foi para o Pátio? Veja Como Liberar Rápido</h3>
+                    <p>Descubra os débitos que precisam ser pagos, a documentação de liberação e o caminho mais rápido para sair do pátio.</p>
+                    <div class="meta">Postado em 15/10/2025 | 10 min de leitura</div>
+                </a>
+                
+                <a href="https://www.notion.so/agenciaatthos/04-O-que-RENAINF-2983f7363c1c80bd92c3dce3574b32f1?source=copy_link" class="card-post">
+                    <span class="tag">Tira-Dúvidas</span>
+                    <h3>Afinal, O Que é Renainf e Como Isso Afeta Meu Licenciamento?</h3>
+                    <p>Entenda o que são as multas de outros estados, como consultá-las e como pagar para liberar seu documento.</p>
+                    <div class="meta">Postado em 10/10/2025 | 4 min de leitura</div>
+                </a>
+
+            </div>
+        </section>
+        
+        <section id="faq-na-blog" class="container" style="padding-top: 40px; padding-bottom: 40px;">
+            <h2 style="font-size: 2.5em; color: var(--cor-primaria); text-align: center; margin-bottom: 10px;">Dúvidas Rápidas (FAQ)</h2>
+            <p style="font-size: 1.1em; max-width: 800px; margin: 0 auto 40px; text-align: center;">Não encontrou o que precisava? Entre em contato/p>
+            
+            <div class="faq-secao">
+                <h3 style="margin-bottom: 20px; border-bottom: 2px solid var(--cor-secundaria); padding-bottom: 5px;">1. Sobre a Mev</h3>
+                
+                <div class="faq-pergunta">
+                    A Mev Consultoria é um Despachante? Vocês são confiáveis?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-resposta">
+                    <p>Somos uma **Consultoria Digital** que faz o trabalho de suporte, de forma 100% online, pelo WhatsApp. Isso significa zero filas e zero complicação para você.</p>
+                    <p>Nossa confiança está na **transparência**. Explicamos cada passo do processo (sem jargões chatos) e você só paga pelas taxas oficiais do Detran mais nossa taxa de serviço, de forma clara.</p>
+                </div>
+
+                <div class="faq-pergunta">
+                    Como é feito o atendimento?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-resposta">
+                    <p>Usamos  o WhatsApp para a **agilidade**, mas o atendimento é **100% humano**. Você vai conversar com um especialista que entende o seu caso e te orienta do início ao fim. A gente gosta de falar de amigo pra amigo!</p>
+                </div>
+                
+                <div class="faq-pergunta">
+                    Como trabalhamos?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-resposta">
+                    <p>Como somos digitais, atendemos clientes no estado de são paulo. A maior parte dos processos de veículos e CNH são eletrônicos hoje, o que facilita nosso trabalho. Se o seu caso for mais específico, nós te avisamos na hora!</p>
+                </div>
+            </div>
+
+            <div class="faq-secao">
+                <h3 style="margin-bottom: 20px; border-bottom: 2px solid var(--cor-secundaria); padding-bottom: 5px;">2. Serviços e Documentação</h3>
+                
+                <div class="faq-pergunta">
+                    Qual o primeiro passo para Licenciar meu veículo?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-resposta">
+                    <p>Super simples! O primeiro passo é entrar em contato pelo WhatsApp e nos passar a **Placa** e o **Renavam** do seu veículo. Com esses dados, fazemos uma consulta completa e gratuita para saber se existem: </p>
+                    <ul>
+                        <li>Débitos de IPVA, DPVAT ou Taxas de Licenciamento;</li>
+                        <li>Multas ativas;</li>
+                        <li>Bloqueios ou Restrições.</li>
+                    </ul>
+                    <p>Depois disso, já te enviamos o orçamento e a lista de documentos necessários.</p>
+                </div>
+
+                <div class="faq-pergunta">
+                    É possível Transferir um veículo com multas?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-resposta">
+                    <p>Pela regra, **não**. Para que a transferência seja concluída, todos os débitos (multas, IPVA, etc.) precisam estar quitados. Mas não se preocupe: a gente resolve isso para você de forma integrada. No nosso orçamento de transferência, já incluímos a quitação dos débitos para que o processo ocorra sem travar.</p>
+                </div>
+                
+                <div class="faq-pergunta">
+                    Se eu for multado, como  podem me ajudar a recorrer?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-resposta">
+                    <p>Sim, essa é uma de nossas especialidades! Nós fazemos uma análise técnica da sua multa para verificar se houve erros na autuação ou na notificação. Se encontrarmos uma boa base para a defesa, cuidamos de todos os recursos administrativos (Defesa Prévia, JARI e CETRAN) para você. <a href="https://www.notion.so/agenciaatthos/03-Como-Recorrer-de-Multa-de-Tr-nsito-SP-2983f7363c1c80e3afcaf67338340b15?source=copy_link" style="text-decoration: underline;">Veja mais sobre Recursos de Multas.</a></p>
+                </div>
+            </div>
+
+            <div class="faq-secao">
+                <h3 style="margin-bottom: 20px; border-bottom: 2px solid var(--cor-secundaria); padding-bottom: 5px;">3. Prazos, Valores e Pagamento</h3>
+                
+                <div class="faq-pergunta">
+                    Quanto tempo demora para o meu documento (CRLV-e) ficar pronto?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-resposta">
+                    <p>O prazo varia muito de acordo com o serviço. O **Licenciamento** é o mais rápido: após a compensação do pagamento e a checagem da documentação, o CRLV-e (documento digital) costuma ser emitido em **até 24 horas úteis**.</p>
+                    <p>Já a **Transferência** ou processos mais complexos (como Isenção PCD ou Remoção do Pátio) dependem dos prazos do Detran e de outros órgãos. De toda forma, você será informado sobre a previsão em cada etapa do processo.</p>
+                </div>
+                
+                <div class="faq-pergunta">
+                    Como eu pago os débitos?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-resposta">
+                    <p>Você pode pagar via **Pix** ou **Cartão de Crédito**. Para as taxas e multas, nossa equipe gera a guia de pagamento ou um link seguro para parcelamento, dependendo da sua preferência. Separamos os valores para você: uma parte é a taxa do órgão público, outra é a nossa taxa de assessoria. Transparência total!</p>
+                </div>
+                
+                <div class="faq-pergunta">
+                    Se eu tiver mais de uma multa, o preço para recorrer muda?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-resposta">
+                    <p>Sim. Cada multa é um processo de defesa individual, que exige análise e acompanhamento próprios. Por isso, o preço é calculado por multa. Entre em contato pelo WhatsApp, informe quantas multas você tem, e montamos um pacote especial para você.</p>
+                </div>
+            </div>
+
+            <section id="cta-faq-final" style="text-align: center; padding: 40px 0 0 0;">
+                <div class="container" style="max-width: 800px; margin: 0 auto;">
+                    <h3 style="margin-bottom: 10px;">Não encontrou a sua pergunta?</h3>
+                    <p style="font-size: 1.1em; margin-bottom: 25px;">Manda mensagem pra gente! Nosso atendimento é humanizado e vamos te ajudar com o que voce precisar.</p>
+                    <a href="https://wa.me/message/ESJRV63FECTAD1?text=Olá! Eu tenho uma pergunta que não está no FAQ." target="_blank" class="btn btn-primary btn-gigante">
+                        <i class="fab fa-whatsapp"></i> Falar com um Especialista
+                    </a>
+                </div>
+            </section>
+        </section>
+        <section id="cta-blog" style="background-color: var(--cor-fundo-destaque); text-align: center; padding: 60px 0;">
+            <div class="container">
+                <h2 style="color: var(--cor-texto-principal); margin-bottom: 15px;">Ainda tem dúvidas? Fale com quem entende.</h2>
+                <p style="font-size: 1.1em; max-width: 600px; margin: 0 auto 30px;">Se o seu caso é urgente ou muito específico, nosso time está pronto para te atender pelo WhatsApp.</p>
+                <a href="https://wa.me/message/ESJRV63FECTAD1?text=Olá! Meu caso é urgente e preciso de ajuda." target="_blank" class="btn btn-primary btn-gigante">
+                    <i class="fab fa-whatsapp"></i> Atendimento Expresso
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo">Mev Consultoria</a>
+                <p>Sua vida digital, sem complicações. Simplificamos a burocracia veicular.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="servicos.html">Licenciamento</a></li>
+                    <li><a href="servicos.html">Transferência</a></li>
+                    <li><a href="servicos.html">Recursos de Multas</a></li>
+                    <li><a href="servicos.html">Isenção PCD</a></li>
+                    <li><a href="servicos.html">Ver todos...</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="blog.html">Blog (Tutoriais)</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Siga-nos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="current-year">2025</span> Mev Consultoria. Todos os direitos reservados. | <a href="politica.html">Política de Privacidade</a> | <a href="termos.html">Termos de Uso</a></p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

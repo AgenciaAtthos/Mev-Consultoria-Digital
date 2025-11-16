@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco - Mev Consultoria | Atendimento Rápido e Direto</title>
+    <meta name="description" content="Entre em contato com  o Nosso Atendimento simplificado via WhatsApp ou e-mail">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Poppins:wght@600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Definindo variáveis CSS e estilos básicos para dark mode e layout -->
+    <style>
+        :root {
+            --cor-primaria: #007BFF; /* Azul principal */
+            --cor-primaria-hover: #0056b3;
+            --cor-fundo: #0A0A0C; /* Fundo escuro */
+            --cor-fundo-card: #121214; /* Fundo mais claro para cards/seções */
+            --cor-fundo-destaque: #1C1C1E; /* Para elementos de destaque */
+            --cor-texto-principal: #F5F5F7; /* Texto claro */
+            --cor-texto-secundario: #B0B0B5; /* Texto cinza/secundário */
+            --sombra-card: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles (Mantendo o layout responsivo) */
+        #main-header {
+            background-color: var(--cor-fundo-card);
+            padding: 15px 0;
+            box-shadow: var(--sombra-card);
+        }
+        #main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--cor-primaria);
+            text-decoration: none;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a {
+            color: var(--cor-texto-secundario);
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--cor-primaria);
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, border-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+        }
+        .btn i {
+            margin-right: 8px;
+        }
+        .btn-outline {
+            color: var(--cor-primaria);
+            border: 2px solid var(--cor-primaria);
+        }
+        .btn-outline:hover {
+            background-color: var(--cor-primaria);
+            color: var(--cor-fundo);
+        }
+
+        /* Footer Styles (Mantendo o layout) */
+        #main-footer {
+            background-color: #000000;
+            padding: 40px 0 10px 0;
+            margin-top: 50px;
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .footer-col {
+            flex: 1 1 200px;
+            margin-bottom: 20px;
+        }
+        .footer-col h4 {
+            font-size: 1.2em;
+            color: var(--cor-texto-principal);
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        .footer-col p, .footer-col ul li a {
+            color: var(--cor-texto-secundario);
+            font-size: 0.95em;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a:hover {
+            color: var(--cor-primaria);
+        }
+        .social-links a {
+            color: var(--cor-texto-principal);
+            font-size: 1.5em;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--cor-primaria);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+        .footer-bottom p, .footer-bottom a {
+            font-size: 0.8em;
+            color: var(--cor-texto-secundario);
+            text-decoration: none;
+        }
+        .footer-bottom a:hover {
+            color: var(--cor-primaria);
+        }
+        
+        /* Estilos ESPECÍFICOS para Contato - Simplificado (NOVO) */
+        #contato-container {
+            display: flex;
+            flex-direction: column; /* Conteúdo empilhado */
+            align-items: center; /* Centraliza horizontalmente */
+            max-width: 650px; /* Limita a largura para melhor leitura */
+            margin: 40px auto; /* Centraliza a caixa na página */
+            padding: 40px;
+            background-color: var(--cor-fundo-card);
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+        #contato-info {
+            width: 100%;
+        }
+        
+        .info-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--cor-fundo); 
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .info-box p {
+            color: var(--cor-texto-secundario);
+            margin-bottom: 5px;
+        }
+        .info-box i {
+            color: var(--cor-primaria);
+            margin-right: 0;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .info-box a {
+             /* Estilo para o link do email */
+            color: var(--cor-primaria); 
+            font-weight: 700;
+            font-size: 1.3em;
+            text-decoration: none;
+        }
+
+        /* Estilo para o grande botão do WhatsApp */
+        .whatsapp-button-main {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366; /* WhatsApp green */
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            padding: 18px 35px;
+            border-radius: 50px; /* Formato pílula */
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            margin-top: 20px;
+            width: 100%;
+            max-width: 450px;
+            letter-spacing: 0.5px;
+        }
+        .whatsapp-button-main:hover {
+            background-color: #1DA851;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.8);
+        }
+        .whatsapp-button-main i {
+            font-size: 1.8em;
+            margin-right: 12px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #main-header .container {
+                flex-direction: column;
+            }
+            nav ul {
+                margin: 10px 0;
+            }
+            nav ul li a {
+                padding: 5px 10px;
+            }
+            .btn-outline {
+                margin-top: 10px;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-col {
+                flex: 1 1 100%;
+            }
+            #contato-container {
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+            .whatsapp-button-main {
+                font-size: 1.1em;
+                padding: 15px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="container">
+            <!-- LOGO -->
+            <a href="index.html" class="logo">Mev Consultoria</a>
+            
+            <!-- NAVEGAÇÃO -->
+            <nav>
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="blog.html">Blog (Tutoriais)</a></li>
+                    <li><a href="contato.html" class="active">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <!-- BOTÃO WHATSAPP NO HEADER -->
+            <a href="https://wa.me/message/ESJRV63FECTAD1?text=Olá! Preciso de ajuda com meu veículo." target="_blank" class="btn btn-outline">
+                <i class="fab fa-whatsapp"></i> Atendimento
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero-contato" class="container" style="text-align: center; padding-top: 80px; padding-bottom: 40px;">
+            <h1 style="font-size: 3.5em; color: var(--cor-texto-principal); font-family: 'Space Grotesk', sans-serif;">Atendimento Direto e Rápido</h1>
+            <p style="font-size: 1.3em; max-width: 800px; margin: 0 auto; color: var(--cor-texto-secundario);">Fale com a gente sem burocracia. Não pedimos para você preencher formulário, é só clicar ou enviar um e-mail.</p>
+        </section>
+
+        <!-- CONTEÚDO DE CONTATO SIMPLIFICADO -->
+        <section id="conteudo-contato" class="container">
+            <div id="contato-container">
+                
+                <div id="contato-info">
+                    <h2 style="font-size: 2em; margin-bottom: 10px; color: var(--cor-primaria);">Qual Canal Você Prefere?</h2>
+                    <p style="margin-bottom: 40px; font-size: 1.1em;">Seja qual for a sua escolha, garantimos uma resposta ágil da nossa equipe.</p>
+                    
+                    <!-- BOTÃO WHATSAPP PRINCIPAL (Recomendado) -->
+                    <a href="https://wa.me/message/ESJRV63FECTAD1?text=Olá! Meu nome é [Seu Nome] e preciso de ajuda com meu veículo." target="_blank" class="whatsapp-button-main">
+                        <i class="fab fa-whatsapp"></i> INICIAR ATENDIMENTO (Recomendado)
+                    </a>
+                    
+                    <!-- INFO BOX E-MAIL -->
+                    <div class="info-box">
+                        <i class="fas fa-envelope"></i>
+                        <p style="font-size: 0.9em;">Se o seu assunto não é urgente, fale conosco por:</p>
+                        <a href="mailto:contato@mevdigital.com.br">contato@mevdigital.com.br</a>
+                    </div>
+                    
+                    <!-- Onde Estamos Section -->
+                    <h3 style="margin-top: 50px; color: var(--cor-texto-principal);">Mev Consultoria: 100% Digital</h3>
+                    <p>Nossa assessoria tem base em São Paulo (SP), mas atendemos clientes de todo o Brasil que buscam a rapidez e eficiência do serviço online. </p>
+                    
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="#" aria-label="Acesse nosso Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Acesse nosso Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Acesse nosso LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo">Mev Consultoria</a>
+                <p>Sua vida digital, sem complicações. Simplificamos a burocracia veicular com agilidade e segurança.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="servicos.html">Licenciamento</a></li>
+                    <li><a href="servicos.html">Transferência</a></li>
+                    <li><a href="servicos.html">Recursos de Multas</a></li>
+                    <li><a href="servicos.html">Isenção PCD</a></li>
+                    <li><a href="servicos.html">Ver todos...</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="blog.html">Blog (Tutoriais)</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Siga-nos</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <!-- Script para o ano atual, mantido fora do bloco de módulo/evento para rodar em iframe simples -->
+            <p>© <span id="current-year">2025</span> Mev Consultoria. Todos os direitos reservados. | <a href="politica.html">Política de Privacidade</a> | <a href="termos.html">Termos de Uso</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        // Atualiza o ano no footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
